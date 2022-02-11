@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    form(action="/new" method="post")
+        textarea(maxlength="100")
+        input(type="text" maxlength="25")
+        button(type="submit") Post

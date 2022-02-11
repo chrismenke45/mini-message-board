@@ -4,8 +4,9 @@ var Schema = mongoose.Schema;
 
 var MessageSchema = new Schema(
   {
-    message: {type: String, required: true, maxLength: 100},
-    message_date: {type: Date, default: Date.now}
+    text: {type: String, required: true, maxLength: 100},
+    user: {type: String, required: true, maxLength: 25},
+    added: {type: Date, default: Date.now}
   }
 );
 
