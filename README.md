@@ -1,0 +1,1 @@
+This is my Yik Yak clone I built with Node.js. It allows users to sign-in or register an account, and then post anonymously. It also has a feature for a user to become an admin and delete posts.

@@ -2,6 +2,6 @@ extends layout
 
 block content
     form(action="/new" method="post")
-        textarea(maxlength="100")
-        input(type="text" maxlength="25")
+        textarea(maxlength="100" name="messageText")
+        input(type="text" maxlength="25" name="messageUser")
         button(type="submit") Post

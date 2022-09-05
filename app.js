@@ -6,13 +6,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var newRouter = require('./routes/new');
 
 
 var app = express();
 
+require('dotenv').config();
+
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://yeehaw:yeehaw@cluster0.duxi6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongoDB = `mongodb+srv://${process.env.Mongo_User_Name}:${process.env.Mongo_Password}@cluster0.duxi6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -29,7 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/new', newRouter);
 
 
 // catch 404 and forward to error handler
